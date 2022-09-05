@@ -133,17 +133,18 @@ export function LyraDemo() {
 
   if (indexing > 0) {
     return (
-      <View>
-        <Text>
-          Indexing <Text>{formatNumber(indexing)}</Text> events
+      <View style={{alignSelf: 'center'}}>
+        <Text style={common.headingText}>
+          Indexing <Text style={common.textBold}>{formatNumber(indexing)}</Text>{' '}
+          events
         </Text>
-        <Text>We will get back to you shortly ...</Text>
+        <Text style={common.text}>We will get back to you shortly ...</Text>
       </View>
     );
   }
 
   return (
-    <>
+    <View style={{flexGrow: 1, flexShrink: 1}}>
       <View style={styles.searchForm}>
         <View style={styles.searchFormSection}>
           <View style={styles.searchFormControl}>
@@ -159,49 +160,47 @@ export function LyraDemo() {
 
         <View style={styles.searchFormSection}>
           <View style={styles.searchFormControl}>
-            <View style={styles.searchFormControl}>
-              <Text style={styles.searchFormTitle}>Exact</Text>
-              <Switch
-                style={styles.searchFormSwitch}
-                value={exact}
-                onValueChange={setExact}
-              />
-            </View>
-            <View style={styles.searchFormControl}>
-              <Text style={styles.searchFormTitle}>Limit</Text>
-              <TextInput
-                style={styles.searchFormTextInput}
-                value={`${limit}`}
-                onChangeText={(text) => {
-                  setLimit(Number.parseInt(text, 10));
-                }}
-                keyboardType="number-pad"
-              />
-            </View>
-            <View style={styles.searchFormControl}>
-              <Text style={styles.searchFormTitle}>Offset</Text>
-              <TextInput
-                style={styles.searchFormTextInput}
-                value={`${offset}`}
-                onChangeText={(text) => {
-                  setOffset(Number.parseInt(text, 10));
-                }}
-                keyboardType="number-pad"
-              />
-            </View>
-            <View style={styles.searchFormControl}>
-              <Text style={styles.searchFormTitle}>Typo tolerance</Text>
-              <TextInput
-                style={styles.searchFormTextInput}
-                value={`${tolerance}`}
-                onChangeText={(text) => {
-                  setTolerance(Number.parseInt(text, 10));
-                }}
-                keyboardType="number-pad"
-                max={3}
-                min={0}
-              />
-            </View>
+            <Text style={styles.searchFormTitle}>Exact</Text>
+            <Switch
+              style={styles.searchFormSwitch}
+              value={exact}
+              onValueChange={setExact}
+            />
+          </View>
+          <View style={styles.searchFormControl}>
+            <Text style={styles.searchFormTitle}>Limit</Text>
+            <TextInput
+              style={styles.searchFormTextInput}
+              value={`${Number.isInteger(limit) ? limit : ''}`}
+              onChangeText={(text) => {
+                setLimit(Number.parseInt(text, 10));
+              }}
+              keyboardType="number-pad"
+            />
+          </View>
+          <View style={styles.searchFormControl}>
+            <Text style={styles.searchFormTitle}>Offset</Text>
+            <TextInput
+              style={styles.searchFormTextInput}
+              value={`${Number.isInteger(offset) ? offset : ''}`}
+              onChangeText={(text) => {
+                setOffset(Number.parseInt(text, 10));
+              }}
+              keyboardType="number-pad"
+            />
+          </View>
+          <View style={styles.searchFormControl}>
+            <Text style={styles.searchFormTitle}>Typo tolerance</Text>
+            <TextInput
+              style={styles.searchFormTextInput}
+              value={`${Number.isInteger(tolerance) ? tolerance : ''}`}
+              onChangeText={(text) => {
+                setTolerance(Number.parseInt(text, 10));
+              }}
+              keyboardType="number-pad"
+              max={3}
+              min={0}
+            />
           </View>
         </View>
       </View>
@@ -249,23 +248,9 @@ export function LyraDemo() {
             {/* </View> */}
           </>
         ) : (
-          <Text style={common.text}>No results</Text>
+          <Text style={styles.searchResultsTitle}>No results</Text>
         )}
       </ScrollView>
-    </>
+    </View>
   );
 }
-
-// Const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: theme.backgroundColor,
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     color: theme.color,
-//   },
-//   app: {
-//     backgroundColor: theme.backgroundColor,
-//     flex: 1,
-//   },
-// });

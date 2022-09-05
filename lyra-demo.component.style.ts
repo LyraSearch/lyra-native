@@ -3,38 +3,43 @@ import common from './common.style';
 import theme from './theme.style';
 
 export default StyleSheet.create({
-  // Container: {
-  //   flex: 1,
-  //   paddingVertical: theme.CONTAINER_PADDING,
-  //   alignItems: 'center'
-  // },
   titleHeading: {
     ...common.headingText,
   },
   searchForm: {
     flexGrow: 0,
-    // FlexShrink: 1,
-    paddingBottom: 8,
-  },
-  searchFormControl: {
-    // Flex: 1,
-    flexDirection: 'row',
+    flexShrink: 0,
+    paddingBottom: 16,
   },
   searchFormSection: {
     paddingBottom: 10,
-    // Flex: 0,
+    flexDirection: 'row',
+    flexGrow: 0,
+    flexShrink: 0,
+  },
+  searchFormControl: {
+    flexGrow: 1,
+    flexShrink: 0,
+    flexDirection: 'column',
+    paddingLeft: 4,
+    paddingRight: 4,
+    justifyContent: 'space-between',
   },
   searchFormTitle: {
     ...common.formTitle,
     flexGrow: 0,
-    paddingRight: 10,
+    flexShrink: 0,
+    paddingBottom: 4,
   },
   searchFormSwitch: {
-    flexGrow: 1,
+    flexGrow: 0,
+    flexShrink: 0,
   },
   searchFormTextInput: {
     ...common.formTextInput,
-    flexGrow: 1,
+    flexGrow: 0,
+    flexShrink: 0,
+    padding: 6,
   },
   searchResults: {
     flexGrow: 3,
@@ -50,22 +55,4 @@ export default StyleSheet.create({
   searchResultCell: {
     //
   },
-  // TitleTextInput: {
-  //   padding: theme.TEXT_INPUT_PADDING,
-  //   backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
-  //   alignSelf: 'stretch'
-  // },
-  // textAreaTitle: {
-  //   fontSize: theme.FONT_SIZE_MEDIUM,
-  //   alignSelf: 'flex-start',
-  //   padding: 10,
-  //   fontWeight: theme.FONT_WEIGHT_LIGHT,
-  //   fontStyle: 'italic'
-  // },
-  // textArea: {
-  //   padding: theme.TEXT_INPUT_PADDING,
-  //   backgroundColor: theme.BACKGROUND_COLOR_LIGHT,
-  //   alignSelf: 'stretch',
-  //   flex: 1
-  // }
 });

@@ -2,8 +2,6 @@ import type {ColorValue, TextStyle} from 'react-native';
 import {StyleSheet} from 'react-native';
 import theme from './theme.style';
 
-// Type CommonStyle = {};
-
 const commonStyle = StyleSheet.create({
   text: {
     fontSize: theme.fontSizeMedium,
@@ -16,15 +14,19 @@ const commonStyle = StyleSheet.create({
   },
   formTitle: {
     color: theme.colorWhite,
+    fontSize: theme.fontSizeMedium,
     fontWeight: theme.fontWeightBold as 'bold',
   },
   formTextInput: {
+    fontSize: theme.fontSizeMedium,
     color: theme.colorWhite,
     borderColor: theme.colorLightGray,
     borderWidth: theme.borderThick,
     borderRadius: theme.radiusNormal,
+    backgroundColor: theme.colorGray,
   },
   textBold: {
+    fontSize: theme.fontSizeMedium,
     fontWeight: theme.fontWeightExtraBold as 'bold',
   },
 });

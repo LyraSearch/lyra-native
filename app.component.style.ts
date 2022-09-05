@@ -5,19 +5,17 @@ import common from './common.style';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colorGray,
-    // AlignItems: 'center',
-    // justifyContent: 'center',
+    backgroundColor: theme.colorBlack,
     color: theme.colorWhite,
+    padding: 10,
   },
-  app: {
-    backgroundColor: theme.colorGray,
-    color: theme.colorWhite,
+  iosSafeArea: {
+    backgroundColor: theme.colorBlack,
     flex: 1,
   },
   pageTitle: {
     ...common.headingText,
-    paddingTop: 8,
+    fontSize: theme.fontSizeHuge,
     paddingBottom: 16,
   },
 });

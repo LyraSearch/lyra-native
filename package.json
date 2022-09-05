@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^0.17.0",
-    "@lyrasearch/lyra": "file:../lyra",
+    "@lyrasearch/lyra": "github:LyraSearch/lyra",
     "@types/react": "~18.0.0",
     "@types/react-native": "~0.69.1",
     "expo": "~46.0.9",
