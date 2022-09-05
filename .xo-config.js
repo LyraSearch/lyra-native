@@ -2,6 +2,7 @@ module.exports = {
     space: true,
     envs: ["es2021", "browser"],
     prettier: true,
+    ignores: ['events.ts'],
     overrides: [
         {
           files: "**/*.tsx",
@@ -15,14 +16,14 @@ module.exports = {
               },
             ],
             // "n/file-extension-in-import": "off",
-            // "import/extensions": "off",
+            "import/extensions": "off",
           },
         },
-        // {
-        //   files: "**/*.ts",
-        //   rules: {
-        //     "import/extensions": "off",
-        //   },
-        // },
+        {
+          files: "**/*.ts",
+          rules: {
+            "import/extensions": "off",
+          },
+        },
       ],
 }
