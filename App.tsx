@@ -1,3 +1,4 @@
+import './shim.js'; // eslint-disable-line import/no-unassigned-import
 import {StatusBar} from 'expo-status-bar';
 import {SafeAreaView, Text, View} from 'react-native';
 import LyraDemo from './lyra-demo';
