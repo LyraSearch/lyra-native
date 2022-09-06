@@ -1,17 +1,17 @@
 import {
   ScrollView,
-  StyleSheet,
   Switch,
   Text,
   TextInput,
   View,
+  useWindowDimensions,
 } from 'react-native';
 import {useEffect, useState} from 'react';
 import {create, formatNanoseconds, insert, search} from '@lyrasearch/lyra';
 import dataset from './events';
 import theme from './theme.style';
 import common from './common.style';
-import styles from './lyra-demo.component.style';
+import createStyles from './lyra-demo.component.style';
 
 type Event = {
   description: string;
@@ -131,6 +131,9 @@ function LyraDemo() {
     );
   }, [term, limit, offset, exact, tolerance]);
 
+  const dimensions = useWindowDimensions();
+  const styles = createStyles(dimensions);
+
   if (indexing > 0) {
     return (
       <View style={{alignSelf: 'center'}}>
@@ -165,11 +168,14 @@ function LyraDemo() {
             <View style={styles.searchFormLabel}>
               <Text style={styles.searchFormTitle}>Exact</Text>
             </View>
-            <Switch
-              style={styles.searchFormSwitch}
-              value={exact}
-              onValueChange={setExact}
-            />
+
+            <View style={styles.searchFormSwitch}>
+              <Switch
+                style={styles.searchFormSwitchInput}
+                value={exact}
+                onValueChange={setExact}
+              />
+            </View>
           </View>
           <View style={styles.searchFormControl}>
             <View style={styles.searchFormLabel}>
