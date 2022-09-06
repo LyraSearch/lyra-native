@@ -17,9 +17,7 @@ const styles = StyleSheet.create({
   pageTitle: {
     ...common.headingText,
     fontSize: theme.fontSizeHuge,
-    // PaddingBottom: 16,
     paddingLeft: 16,
-    // FlexGrow: 1,
   },
   header: {
     paddingBottom: 16,
