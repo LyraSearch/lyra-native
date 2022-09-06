@@ -2,7 +2,7 @@ import {StatusBar} from 'expo-status-bar';
 import {SafeAreaView, Text, View} from 'react-native';
 import LyraDemo from './lyra-demo';
 import styles from './app.component.style';
-import Logo from './Logo';
+import Logo from './logo';
 
 export default function App() {
   return (

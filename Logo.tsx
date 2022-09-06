@@ -9,6 +9,10 @@ import Svg, {
 } from 'react-native-svg';
 import {View} from 'react-native';
 
+// SVG Logo converted with React-SVGR
+// https://docs.expo.dev/ui-programming/using-svgs/#converting-individual-svg-files-for-react-native
+// https://stackoverflow.com/a/70626899
+
 const originalWidth = 1500;
 const originalHeight = 566;
 const aspectRatio = originalWidth / originalHeight;
