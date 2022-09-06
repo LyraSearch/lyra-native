@@ -72,7 +72,7 @@ function formatNumber(number: number) {
   return number.toLocaleString();
 }
 
-export function LyraDemo() {
+function LyraDemo() {
   const [indexing, setIndexing] = useState(r.result.events.length);
   const [term, setTerm] = useState('');
   const [exact, setExact] = useState(false);
@@ -148,7 +148,9 @@ export function LyraDemo() {
       <View style={styles.searchForm}>
         <View style={styles.searchFormSection}>
           <View style={styles.searchFormControl}>
-            <Text style={styles.searchFormTitle}>Term</Text>
+            <View style={styles.searchFormLabel}>
+              <Text style={styles.searchFormTitle}>Term</Text>
+            </View>
             <TextInput
               style={styles.searchFormTextInput}
               value={term}
@@ -160,7 +162,9 @@ export function LyraDemo() {
 
         <View style={styles.searchFormSection}>
           <View style={styles.searchFormControl}>
-            <Text style={styles.searchFormTitle}>Exact</Text>
+            <View style={styles.searchFormLabel}>
+              <Text style={styles.searchFormTitle}>Exact</Text>
+            </View>
             <Switch
               style={styles.searchFormSwitch}
               value={exact}
@@ -168,9 +172,11 @@ export function LyraDemo() {
             />
           </View>
           <View style={styles.searchFormControl}>
-            <Text style={styles.searchFormTitle}>Limit</Text>
+            <View style={styles.searchFormLabel}>
+              <Text style={styles.searchFormTitle}>Limit</Text>
+            </View>
             <TextInput
-              style={styles.searchFormTextInput}
+              style={styles.searchFormNumberInput}
               value={`${Number.isInteger(limit) ? limit : ''}`}
               onChangeText={(text) => {
                 setLimit(Number.parseInt(text, 10));
@@ -179,9 +185,11 @@ export function LyraDemo() {
             />
           </View>
           <View style={styles.searchFormControl}>
-            <Text style={styles.searchFormTitle}>Offset</Text>
+            <View style={styles.searchFormLabel}>
+              <Text style={styles.searchFormTitle}>Offset</Text>
+            </View>
             <TextInput
-              style={styles.searchFormTextInput}
+              style={styles.searchFormNumberInput}
               value={`${Number.isInteger(offset) ? offset : ''}`}
               onChangeText={(text) => {
                 setOffset(Number.parseInt(text, 10));
@@ -190,9 +198,11 @@ export function LyraDemo() {
             />
           </View>
           <View style={styles.searchFormControl}>
-            <Text style={styles.searchFormTitle}>Typo tolerance</Text>
+            <View style={styles.searchFormLabel}>
+              <Text style={styles.searchFormTitle}>Typo tolerance</Text>
+            </View>
             <TextInput
-              style={styles.searchFormTextInput}
+              style={styles.searchFormNumberInput}
               value={`${Number.isInteger(tolerance) ? tolerance : ''}`}
               onChangeText={(text) => {
                 setTolerance(Number.parseInt(text, 10));
@@ -254,3 +264,5 @@ export function LyraDemo() {
     </View>
   );
 }
+
+export default LyraDemo;
