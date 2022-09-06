@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import theme from './theme.style';
 import common from './common.style';
 
@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colorBlack,
     color: theme.colorWhite,
     padding: 10,
+    paddingTop: Platform.OS === 'web' ? 10 : 4,
   },
   iosSafeArea: {
     backgroundColor: theme.colorBlack,
