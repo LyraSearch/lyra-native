@@ -2,6 +2,7 @@ import {StyleSheet, Platform} from 'react-native';
 import common from './common.style';
 import theme from './theme.style';
 
+// Got the ideas for "responsive" here: https://mmazzarolo.com/blog/2021-07-31-react-native-responsive-scaling-on-the-web/
 export default function createStyles(dimensions) {
   const compact = Platform.OS !== 'web' || dimensions.width < 480;
   console.log('D', dimensions, compact);
@@ -60,7 +61,8 @@ export default function createStyles(dimensions) {
     searchFormTextInput: {
       ...common.formTextInput,
       flexGrow: compact ? 1 : 0,
-      flexShrink: 0,
+      flexShrink: 1,
+      minWidth: 80,
       padding: 6,
       marginLeft: compact ? 12 : 0,
     },
