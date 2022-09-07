@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "lyra-native",
+    "name": "Lyra Native",
     "slug": "lyra-native",
+    "owner": "codyzu",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
