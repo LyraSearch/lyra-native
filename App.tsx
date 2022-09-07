@@ -1,3 +1,4 @@
+import 'expo-dev-client'; // eslint-disable-line import/no-unassigned-import
 import './shim.js'; // eslint-disable-line import/no-unassigned-import
 import {StatusBar} from 'expo-status-bar';
 import {Text, View, Platform} from 'react-native';
