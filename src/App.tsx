@@ -1,33 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useRef, useState } from 'react'
+import classes from './app.module.css'
+// import 'virtual:uno.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const r = useRef(null)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <>
+    <div className="container mx-auto font-sans">
+      <div className='max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl'>
+        <div className='p-8'>Lyra Demo</div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    {/* Not sure why, but the embedded snack does not work with vite dev server. It does work in the built site */}
+    <div ref={r} data-snack-id="@codyzu/github.com-codyzu-lyra-native@snack-size" data-snack-platform="mydevice" data-snack-preview="true" data-snack-theme="dark" className={classes.snack}></div>
+    <div className='flex flex-row-reverse'>
+      <div className="flex-none">Click on the various platforms to see all of the magic 👆</div>
     </div>
+    </div>
+    
+    </>
   )
 }
 
