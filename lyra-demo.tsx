@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import {useEffect, useState} from 'react';
 import {create, formatNanoseconds, insert, search} from '@lyrasearch/lyra';
-import dataset from './events';
 import theme from './theme.style';
 import common from './common.style';
 import createStyles from './lyra-demo.component.style';
@@ -29,8 +28,6 @@ type Result = {
 type Response = {
   result: Result;
 };
-
-const r = dataset as Response;
 
 type Hit = {
   description: string;
@@ -73,7 +70,8 @@ function formatNumber(number: number) {
 }
 
 function LyraDemo() {
-  const [indexing, setIndexing] = useState(r.result.events.length);
+  const [dataset, setDataset] = useState<Event[] | undefined>();
+  const [indexing, setIndexing] = useState<number | undefined>();
   const [term, setTerm] = useState('');
   const [exact, setExact] = useState(false);
   const [limit, setLimit] = useState(5);
@@ -82,12 +80,20 @@ function LyraDemo() {
   const [results, setResults] = useState<SearchResult | undefined>(null);
 
   useEffect(() => {
+    async function loadData() {
+      const eventsModule = await import('./events');
+      const response = eventsModule.default as Response;
+      setDataset(response.result.events);
+      setIndexing(response.result.events.length);
+    }
+
+    loadData(); // eslint-disable-line @typescript-eslint/no-floating-promises
+  }, []);
+
+  useEffect(() => {
     function addDocuments() {
       // We use Random here just to show a nice UI to the user
-      const batch = r.result.events.splice(
-        0,
-        300 + Math.floor(Math.random() * 1000),
-      );
+      const batch = dataset.splice(0, 300 + Math.floor(Math.random() * 1000));
 
       if (batch.length === 0) {
         setIndexing(0);
@@ -110,8 +116,10 @@ function LyraDemo() {
       requestAnimationFrame(addDocuments);
     }
 
-    addDocuments();
-  }, []);
+    if (dataset) {
+      addDocuments();
+    }
+  }, [dataset]);
 
   useEffect(() => {
     if (!term) {
@@ -134,6 +142,17 @@ function LyraDemo() {
   const dimensions = useWindowDimensions();
   const styles = createStyles(dimensions);
 
+  if (!dataset) {
+    return (
+      <View style={{alignSelf: 'center'}}>
+        <Text style={common.headingText}>
+          Loading dataset... this depends on your internet connection speed.
+        </Text>
+        <Text style={common.text}>We will get back to you shortly...</Text>
+      </View>
+    );
+  }
+
   if (indexing > 0) {
     return (
       <View style={{alignSelf: 'center'}}>
@@ -141,7 +160,7 @@ function LyraDemo() {
           Indexing <Text style={common.textBold}>{formatNumber(indexing)}</Text>{' '}
           events
         </Text>
-        <Text style={common.text}>We will get back to you shortly ...</Text>
+        <Text style={common.text}>We will get back to you shortly...</Text>
       </View>
     );
   }

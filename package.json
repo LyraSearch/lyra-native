@@ -6,7 +6,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "NODE_OPTIONS=--openssl-legacy-provider expo start --web"
+    "web": "NODE_OPTIONS=--openssl-legacy-provider expo start --web",
+    "export:web": "NODE_OPTIONS=--openssl-legacy-provider expo export:web"
   },
   "dependencies": {
     "@lyrasearch/lyra": "^0.2.3",
