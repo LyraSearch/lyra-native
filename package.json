@@ -9,17 +9,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iconify-json/akar-icons": "^1.1.8",
+    "@iconify-json/flat-color-icons": "^1.1.2",
+    "@iconify-json/fluent-emoji": "^1.1.0",
+    "@iconify-json/fxemoji": "^1.1.2",
+    "@iconify-json/line-md": "^1.1.15",
+    "@iconify-json/simple-line-icons": "^1.1.2",
     "@unocss/reset": "^0.45.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
+    "@iconify-json/emojione": "^1.1.2",
+    "@iconify-json/logos": "^1.1.15",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
     "postcss-preset-env": "^7.8.1",
     "typescript": "^4.6.4",
-    "unocss": "^0.45.18",
+    "unocss": "^0.45.21",
     "vite": "^3.1.0",
     "xo": "^0.52.3"
   }
