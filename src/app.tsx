@@ -23,7 +23,8 @@ function App() {
           >
             <div flex="~ flex-col" justify="center">
               <div text="5xl">
-                Lyra Demo <div className="i-fxemoji:sparkles" inline="block" />
+                Lyra React Native Demo{' '}
+                <div className="i-fxemoji:sparkles" inline="block" />
               </div>
             </div>
           </div>
