@@ -76,7 +76,7 @@ function App() {
                     inline="block"
                     p="y-3 x-4"
                     rounded-lg
-                    hover="text-gray-900 bg-gray-100"
+                    hover="text-gray-900 bg-rose-100"
                     aria-current="page"
                     href="https://github.com/codyzu/lyra-native"
                   >
@@ -116,8 +116,8 @@ function TabLink(props: {
         rounded-lg
         className={({isActive}) =>
           isActive
-            ? 'text-white bg-blue-600'
-            : 'hover:text-gray-900 hover:bg-gray-100'
+            ? 'text-white bg-rose-600'
+            : 'hover:text-gray-900 hover:bg-rose-100'
         }
         aria-current="page"
         {...rest}
