@@ -17,3 +17,9 @@ There are several important branches to repo:
 1. Checkout the `main` branch and then `npm run start` to start the Expo app.
 2. **Native:** Install [Expo Go](https://expo.dev/client) on your device and then scan the QR code in your terminal.
 3. **Web:** Press `w` to open the web build.
+
+## Website
+
+The website is deployed on any change to the `main` or `site` branches.
+
+**⚠️ Note:** The website takes ~40 minutes to deploy due to how webpack 4 (used by Expo) processes the 10MB dataset. _This needs improvement (PRs welcome!)._
