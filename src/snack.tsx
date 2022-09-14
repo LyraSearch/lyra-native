@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useRef} from 'react';
 
 export default function Snack() {
   // UnoCSS vite plugin breaks loading of the snack in dev mode when in the index.js.
@@ -10,6 +10,13 @@ export default function Snack() {
     document.body.append(script);
     return () => {
       script.remove();
+
+      // Cleanup what Expo added to the global window object
+      // @ts-expect-error ts doesn't know about ExpoSnack
+      if (window.ExpoSnack) {
+        // @ts-expect-error ts doesn't know about ExpoSnack
+        delete window.ExpoSnack;
+      }
     };
   }, []);
 
