@@ -30,15 +30,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Build RN site
-        run: |
-          git remote -vvv
-          git fetch origin
-          git checkout origin/main
-          npm run site
+        with:
+          fetch-depth: 0
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
       - name: Build demo site
         run: |
-          git checkout ${{ github.ref }}
+          npm install
+          npm run site
+      - name: Build RN site
+        run: |
+          git checkout main
+          npm install
           npm run site
       - name: Setup Pages
         uses: actions/configure-pages@v2
