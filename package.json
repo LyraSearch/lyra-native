@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "web": "NODE_OPTIONS=--openssl-legacy-provider expo start --web",
     "export:web": "NODE_OPTIONS=--openssl-legacy-provider expo export:web",
-    "site": "npm run export:web && rimraf site/rn-web && copyfiles \"web-build/**\" site/rn-web"
+    "site": "npm run export:web && rimraf site/rn-web && copyup \"web-build/**/*\" site/rn-web"
   },
   "dependencies": {
     "@lyrasearch/lyra": "^0.2.3",
