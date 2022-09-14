@@ -1,4 +1,5 @@
 import {useRef} from 'react';
+import {Link, NavLink, Outlet} from 'react-router-dom';
 import Snack from './snack';
 import logo from './assets/lyra.svg';
 
@@ -6,7 +7,7 @@ function App() {
   const r = useRef(null);
 
   return (
-    <div bg="gray-900" text="white">
+    <div bg="gray-900" text="white" className="min-h-screen">
       <div container mx-auto font="sans" p="3 t8">
         <div flex m="b-3">
           <div grow="1" md="basis-1/5" className="basis-1/2">
@@ -31,71 +32,98 @@ function App() {
         <div flex justify="center" m="b-4">
           <div text="lg" flex="~ col" gap="4" md="basis-3/5" m="y-8">
             <div>
-              This site demonstrates how Lyra, the crazy fast full-text search
-              engine, can be embedded in a cross-platform react native
-              application.
+              {/* https://flowbite.com/docs/components/tabs/#pills-tabs */}
+              <ul
+                className="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400"
+                justify="center"
+              >
+                <TabLink to="/" end>
+                  <div
+                    align-middle
+                    className="i-akar-icons:home"
+                    w="5"
+                    h="5"
+                    m="r-2"
+                    inline="block"
+                  />
+                  home
+                </TabLink>
+                <TabLink to="/web">
+                  <div
+                    m="r-2"
+                    h="5"
+                    w="5"
+                    inline="block"
+                    align-middle
+                    className="i-akar-icons:globe"
+                  />
+                  rn web
+                </TabLink>
+                <TabLink to="/snack">
+                  <div
+                    m="r-2"
+                    h="5"
+                    w="5"
+                    inline="block"
+                    align-middle
+                    className="i-akar-icons:mobile-device"
+                  />
+                  snack
+                </TabLink>
+                <li m="r-2">
+                  <a
+                    inline="block"
+                    p="y-3 x-4"
+                    rounded-lg
+                    hover="text-gray-900 bg-gray-100"
+                    aria-current="page"
+                    href="https://github.com/codyzu/lyra-native"
+                  >
+                    <div
+                      m="r-2"
+                      h="5"
+                      w="5"
+                      inline="block"
+                      align-middle
+                      className="i-line-md:github-loop"
+                    />
+                    source
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div flex m="t-10 b-4" items-center>
-              <div m="r-3" h="8" w="8" className="i-akar-icons:globe" />
-              <span font="bold" text="2xl">
-                react-native-web
-              </span>
-            </div>
-            <div>
-              <a text="rose" href="/rn-web">
-                Click here
-              </a>{' '}
-              to visit the react-native-web build of the full demo (includes the
-              full 10 MB dataset).
-            </div>
-            <div flex m="t-10 b-4" items-center>
-              <div m="r-3" h="8" w="8" className="i-line-md:github-loop" />
-              <span font="bold" text="2xl">
-                source
-              </span>
-            </div>
-            <div>
-              Checkout the{' '}
-              <a text="rose" href="">
-                repo on GitHub
-              </a>{' '}
-              and run the full demo yourself. You download the demo with the
-              full 10MB dataset to your mobile device to see just how fast Lyra
-              is!
-            </div>
-            <div flex m="t-10 b-4" items-center>
-              <div m="r-3" h="8" w="8" className="i-akar-icons:mobile-device" />
-              <span font="bold" text="2xl">
-                snack
-              </span>
-            </div>
-            <div>
-              Scroll down{' '}
-              <div
-                className="i-fxemoji:blackdownpointingdoublearrow"
-                inline="block"
-              />{' '}
-              to see the Expo Snack deployment of Lyra (great for mobile
-              devices!).
-            </div>
-            <div>
-              The snack version uses a smaller dataset in order to work with the
-              Expo Snack architecture (it doesn't like 10MB files). If you
-              download Expo Go from your app store, you can scan the QR code and
-              run the Lyra demo directly on phone{' '}
-              <div className="i-fxemoji:sunglasses" inline="block" />
-              !!!
-            </div>
-          </div>
-        </div>
-        <Snack />
-        <div flex="~ row-reverse">
-          <div flex="none">
-            Click on the various platforms to see all of the magic 👆
+            <Outlet />
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+function TabLink(props: {
+  [x: string]: any;
+  children: React.ReactNode;
+  to: string;
+}) {
+  const {children, to, ...rest} = props;
+  return (
+    <li m="r-2">
+      <NavLink
+        to={to}
+        inline="block"
+        p="y-3 x-4"
+        rounded-lg
+        className={({isActive}) =>
+          isActive
+            ? 'text-white bg-blue-600'
+            : 'hover:text-gray-900 hover:bg-gray-100'
+        }
+        aria-current="page"
+        {...rest}
+      >
+        {children}
+      </NavLink>
+    </li>
   );
 }
 

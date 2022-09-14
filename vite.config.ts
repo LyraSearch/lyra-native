@@ -17,4 +17,5 @@ export default defineConfig({
     }),
     react(),
   ],
+  base: '/lyra-native/',
 });

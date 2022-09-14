@@ -15,11 +15,10 @@
     "@iconify-json/line-md": "^1.1.15",
     "@unocss/reset": "^0.45.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.0"
   },
   "devDependencies": {
-    "@iconify-json/emojione": "^1.1.2",
-    "@iconify-json/logos": "^1.1.15",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
