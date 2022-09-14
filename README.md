@@ -9,7 +9,7 @@ To facilitate easy development and deployment, the application uses Expo.
 
 There are several important branches to repo:
 * `main` contains the React Native Expo application with the full 10MB test dataset
-* `snack-size` contains the same application as `main` but with a smaller dataset that allows the application to run using Expo Snack. Snack uses a web framework to develop and run Expo applications directly on the web (think codesandbox for react native). The 10MB dataset crashes Expo Snack, so this branch has a smaller dataset.
+* `snack-size` contains the same application as `main` but with a smaller dataset that allows the application to run using [Expo Snack](https://snack.expo.dev/). Snack uses a web framework to develop and run Expo applications directly on the web (think codesandbox for react native). The 10MB dataset crashes Expo Snack, so this branch has a smaller dataset.
 * `site` contains the demo website. The website embeds both the react-native-web build of the full demo (from the `main` branch) and the Expo Snack (from the `snack-size`) branch.
 
 ## Run on your device 📱
