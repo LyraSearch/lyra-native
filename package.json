@@ -10,15 +10,11 @@
   },
   "dependencies": {
     "@iconify-json/akar-icons": "^1.1.8",
-    "@iconify-json/flat-color-icons": "^1.1.2",
-    "@iconify-json/fluent-emoji": "^1.1.0",
     "@iconify-json/fxemoji": "^1.1.2",
     "@iconify-json/line-md": "^1.1.15",
-    "@iconify-json/simple-line-icons": "^1.1.2",
     "@unocss/reset": "^0.45.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.4.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@iconify-json/emojione": "^1.1.2",
