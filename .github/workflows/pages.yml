@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["site"]
+    branches: ["main", "site"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,13 +37,13 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-      - name: Build demo site
+      - name: Build triggering branch
         run: |
           npm install
           npm run site
-      - name: Build RN site
+      - name: Build other branch
         run: |
-          git checkout main
+          git checkout ${{ github.ref_name == 'main' && 'site' || 'main' }}
           npm install
           npm run site
       - name: Setup Pages
