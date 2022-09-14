@@ -1,4 +1,6 @@
 {
-  "compilerOptions": {},
+  "compilerOptions": {
+    "module": "ESNext"
+  },
   "extends": "expo/tsconfig.base"
 }
