@@ -1,5 +1,4 @@
 import {useEffect} from 'react';
-import classes from './snack.module.css';
 
 export default function Snack() {
   // UnoCSS vite plugin breaks loading of the snack in dev mode when in the index.js.

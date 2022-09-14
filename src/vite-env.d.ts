@@ -1,2 +1,2 @@
-/* /// <reference types="vite/client" /> */
+// <reference types="vite/client" />
 import * as client from 'vite/client';

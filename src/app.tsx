@@ -1,7 +1,4 @@
-import {useRef, useState, useEffect} from 'react';
-import {FcSmartphoneTablet, FcGlobe} from 'react-icons/fc';
-import {VscGithub} from 'react-icons/vsc';
-// Import './shim.d.ts';
+import {useRef} from 'react';
 import Snack from './snack';
 import logo from './assets/lyra.svg';
 
@@ -31,7 +28,7 @@ function App() {
               engine, can be embedded in a cross-platform react native
               application.
             </div>
-            <div flex items="center" m="t-10 b-4" className="">
+            <div flex m="t-10 b-4" className="items-center">
               <div className="i-akar-icons:globe mr-3 h-8 w-8" />
               <span className="font-bold text-2xl">react-native-web</span>
             </div>
@@ -42,7 +39,7 @@ function App() {
               to visit the react-native-web build of the full demo (includes the
               full 10 MB dataset).
             </div>
-            <div flex items="center" m="t-10 b-4">
+            <div flex m="t-10 b-4" className="items-center">
               <div className="i-line-md:github-loop mr-3 h-8 w-8" />
               <span className="font-bold text-xl">source</span>
             </div>
@@ -55,7 +52,7 @@ function App() {
               full 10MB dataset to your mobile device to see just how fast Lyra
               is!
             </div>
-            <div flex items="center" m="t-10 b-4" className="">
+            <div flex m="t-10 b-4" className="items-center">
               <div className="i-akar-icons:mobile-device mr-3 h-8 w-8" />
               <span className="font-bold text-2xl">snack</span>
             </div>
