@@ -7,7 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "NODE_OPTIONS=--openssl-legacy-provider expo start --web",
-    "export:web": "NODE_OPTIONS=--openssl-legacy-provider expo export:web"
+    "export:web": "NODE_OPTIONS=--openssl-legacy-provider expo export:web",
+    "site": "npm run export:web && rimraf site/rn-web && copyfiles \"web-build/**\" site/rn-web"
   },
   "dependencies": {
     "@lyrasearch/lyra": "^0.2.3",
@@ -26,11 +27,14 @@
     "@expo/webpack-config": "^0.17.0",
     "@types/react": "~18.0.0",
     "@types/react-native": "~0.69.1",
+    "copyfiles": "^2.4.1",
     "eas-cli": "^2.1.0",
     "expo": "~46.0.9",
     "expo-updates": "~0.14.5",
+    "rimraf": "^3.0.2",
     "typescript": "^4.6.3",
     "xo": "^0.52.3"
   },
-  "private": true
+  "private": true,
+  "homepage": "/rn-web"
 }
