@@ -35,6 +35,11 @@ export default function Snack() {
         and deploy the demo with the full 10MB dataset directly to your portable
         device.
       </div>
+      <div>
+        If your window is too small in width (i.e. on a mobile device), Expo
+        Snack will hide the rendered react native application. This page works
+        best on a computer screen.
+      </div>
       <div
         data-snack-id="@codyzu/github.com-codyzu-lyra-native@snack-size"
         data-snack-platform="ios"
