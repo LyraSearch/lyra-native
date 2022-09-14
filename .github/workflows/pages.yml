@@ -32,6 +32,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Build RN site
         run: |
+          git remote -vvv
+          git fetch origin
           git checkout origin/main
           npm run site
       - name: Build demo site
