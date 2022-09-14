@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "site": "npm run build && rimraf \"site/!(rn-web)\" && copyfiles \"dist/**\" site"
   },
   "dependencies": {
     "@iconify-json/akar-icons": "^1.1.8",
@@ -22,7 +23,9 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
+    "copyfiles": "^2.4.1",
     "postcss-preset-env": "^7.8.1",
+    "rimraf": "^3.0.2",
     "typescript": "^4.6.4",
     "unocss": "^0.45.21",
     "vite": "^3.1.0",
