@@ -36,5 +36,5 @@
     "xo": "^0.52.3"
   },
   "private": true,
-  "homepage": "/rn-web"
+  "homepage": "/lyra-native/rn-web"
 }
