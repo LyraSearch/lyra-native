@@ -19,7 +19,11 @@ export default function Snack() {
       data-snack-platform="ios"
       data-snack-preview="true"
       data-snack-theme="dark"
-      className="h-700px w-full overflow-hidden bg-neutral-800 border-solid border-width-1px border-slate-300 rounded-xl"
+      bg="neutral-800"
+      border="solid width-1px slate-300 rounded-xl"
+      h="700px"
+      w="full"
+      overflow="hidden"
     ></div>
   );
 }
