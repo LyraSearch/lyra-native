@@ -48,7 +48,7 @@ export default function Snack() {
         best on a computer screen.
       </div>
       <div
-        data-snack-id="@codyzu/github.com-codyzu-lyra-native@snack-size"
+        data-snack-id="@git/github.com/LyraSearch/lyra-native@snack-size"
         data-snack-platform="ios"
         data-snack-preview="true"
         data-snack-theme="dark"
