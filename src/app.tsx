@@ -78,7 +78,7 @@ function App() {
                     rounded-lg
                     hover="text-gray-900 bg-rose-100"
                     aria-current="page"
-                    href="https://github.com/codyzu/lyra-native"
+                    href="https://github.com/LyraSearch/lyra-native"
                   >
                     <div
                       m="r-2"
